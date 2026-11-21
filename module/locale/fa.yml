@@ -1,0 +1,24 @@
+assassins_resume: ادامه فرمان
+assassins_resume_tooltip: آدمکش‌ها پس از نبرد به سوی مقصد اصلی بازمی‌گردند.
+assassins_shortcut: میان‌بر از دیوار
+assassins_shortcut_tooltip: آدمکش فقط برای مسیر بسیار کوتاه‌تر بالا می‌رود. با قوانین مسیریابی دروازه
+  خاموش کنید.
+shortcut_ground_steps: مسیر کوتاه زمینی (خانه)
+shortcut_ground_steps_tooltip: کمتر از این فاصله مسیر زمینی حفظ می‌شود.
+shortcut_saving_percent: حداقل کاهش مسیر (٪)
+shortcut_saving_percent_tooltip: بالارفتن باید مسیر را دست‌کم به این اندازه کوتاه کند.
+workers_unstuck: گرفتار در راه استراحت
+workers_unstuck_tooltip: کارگر جای دیگری پیدا می‌کند یا به کار برمی‌گردد.
+workers_jobs_unstuck: جایگزینی کارگر گیرکرده
+workers_jobs_unstuck_tooltip: پس از چند تلاش ناموفق، کارگر تازه از کنار آتش می‌آید و بار قبلی از دست می‌رود.
+ignore_quarry_piles: نادیده گرفتن دپوی سنگ
+ignore_quarry_piles_tooltip: نیروهای تهاجمی فقط با دستور به دپو حمله می‌کنند.
+rebuild_limit: محدودکردن بازسازی
+rebuild_limit_tooltip: مسیریابی ناموفق کمتر باعث بازسازی مسیرهای کل نقشه می‌شود.
+rebuild_every_ticks: کمترین فاصله (تیک)
+rebuild_every_ticks_tooltip: ۲۰۰ تیک در سرعت عادی چند ثانیه است.
+balance_changes: Balance Changes
+bugfixes: Bugfixes
+qol: Quality of Life
+tags.behavior: رفتار
+tags.bugfixes: رفع اشکال

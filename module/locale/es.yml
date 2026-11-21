@@ -1,0 +1,24 @@
+assassins_resume: Retomar la orden
+assassins_resume_tooltip: Tras el combate los asesinos vuelven a la ruta original.
+assassins_shortcut: Atajo por los muros
+assassins_shortcut_tooltip: Los asesinos escalan si ahorran bastante camino. Desactívalo con reglas de
+  rutas de puertas.
+shortcut_ground_steps: Ruta corta a pie (casillas)
+shortcut_ground_steps_tooltip: Se mantiene el camino a pie por debajo de esta distancia.
+shortcut_saving_percent: Ahorro mínimo (%)
+shortcut_saving_percent_tooltip: Escalar debe acortar el trayecto al menos en ese porcentaje.
+workers_unstuck: Descansos bloqueados
+workers_unstuck_tooltip: El trabajador busca otro lugar o vuelve al trabajo.
+workers_jobs_unstuck: Sustituir trabajadores atascados
+workers_jobs_unstuck_tooltip: Tras varios intentos llega un reemplazo de la hoguera. La carga se pierde.
+ignore_quarry_piles: Ignorar montones de piedra
+ignore_quarry_piles_tooltip: Las tropas agresivas solo atacan esos montones por orden.
+rebuild_limit: Limitar recálculos
+rebuild_limit_tooltip: Una ruta fallida provoca con menos frecuencia un recálculo de todo el mapa.
+rebuild_every_ticks: Intervalo mínimo (ticks)
+rebuild_every_ticks_tooltip: 200 ticks equivalen a unos segundos a velocidad normal.
+balance_changes: Balance Changes
+bugfixes: Bugfixes
+qol: Quality of Life
+tags.behavior: Comportamiento
+tags.bugfixes: Correcciones

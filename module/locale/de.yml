@@ -1,0 +1,24 @@
+assassins_resume: Auftrag fortsetzen
+assassins_resume_tooltip: Assassinen verfolgen nach dem Kampf wieder das ursprüngliche Ziel.
+assassins_shortcut: Kletterabkürzung
+assassins_shortcut_tooltip: Assassinen klettern nur bei deutlicher Abkürzung. Mit Tor-Routenregeln deaktivieren.
+shortcut_ground_steps: Kurzer Bodenweg (Felder)
+shortcut_ground_steps_tooltip: Unter dieser Länge bleibt der Weg am Boden.
+shortcut_saving_percent: Minimale Wegersparnis (%)
+shortcut_saving_percent_tooltip: Klettern muss den Weg um diesen Anteil kürzen.
+workers_unstuck: Blockierte Pausenwege
+workers_unstuck_tooltip: Arbeiter suchen ein anderes Ziel oder gehen wieder arbeiten.
+workers_jobs_unstuck: Feststeckende Arbeiter ersetzen
+workers_jobs_unstuck_tooltip: Nach wiederholtem Scheitern kommt Ersatz vom Lagerfeuer. Getragene Waren
+  gehen verloren.
+ignore_quarry_piles: Steinhaufen ignorieren
+ignore_quarry_piles_tooltip: Aggressive Truppen greifen Steinbruchlager nur auf Befehl an.
+rebuild_limit: Neuberechnungen begrenzen
+rebuild_limit_tooltip: Fehlgeschlagene Wege lösen seltener eine Neuberechnung der ganzen Karte aus.
+rebuild_every_ticks: Mindestabstand (Ticks)
+rebuild_every_ticks_tooltip: 200 Ticks sind bei normalem Tempo einige Sekunden.
+balance_changes: Balance Changes
+bugfixes: Bugfixes
+qol: Quality of Life
+tags.behavior: Verhalten
+tags.bugfixes: Fehlerkorrekturen

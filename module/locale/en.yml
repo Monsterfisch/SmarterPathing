@@ -1,46 +1,40 @@
-group: Smarter pathing
-group_descr: |
-  Units find their way better: they don't forget where they were going, and assassins
-  don't climb walls for nothing.
 assassins_resume: Assassins carry on after a fight
-assassins_resume_tooltip: |
-  When assassins you sent somewhere run into enemies and fight them, they carry on to where
-  you sent them once the fight is over, climbing walls on the way like before. Without this
+assassins_resume_tooltip: When assassins you sent somewhere run into enemies and fight them, they carry
+  on to where you sent them once the fight is over, climbing walls on the way like before. Without this
   they often just stopped where the fight ended.
 assassins_shortcut: Assassins only climb when it is clearly shorter
-assassins_shortcut_tooltip: |
-  Assassins look for a way on the ground first. A short walk is always taken. When the walk
-  is long, they look for a way over the walls too, and climb only if that way is clearly
-  shorter. No more climbing up and down walls when walking around would do.
+assassins_shortcut_tooltip: Assassins look for a way on the ground first. A short walk is always taken.
+  When the walk is long, they look for a way over the walls too, and climb only if that way is clearly
+  shorter. No more climbing up and down walls when walking around would do. Disable this if Gatehouse
+  Fixes treats enemy gates as closed or requires stairs for human or AI troops.
 shortcut_ground_steps: Walks shorter than this are never replaced by climbing (tiles)
-shortcut_ground_steps_tooltip: |
-  If the way on the ground is shorter than this many tiles, assassins just walk it.
+shortcut_ground_steps_tooltip: If the way on the ground is shorter than this many tiles, assassins just
+  walk it.
 shortcut_saving_percent: Climbing must save at least this much of the walk (percent)
-shortcut_saving_percent_tooltip: |
-  With 25, assassins climb only when the way over the walls is at least a quarter shorter
-  than walking. With 0, they take whichever way is shorter.
+shortcut_saving_percent_tooltip: With 25, assassins climb only when the way over the walls is at least
+  a quarter shorter than walking. With 0, they take whichever way is shorter.
 workers_unstuck: Workers on a break don't get stuck
-workers_unstuck_tooltip: |
-  Workers on a break walk to a garden, a maypole or another nice building. If their way
-  there gets blocked, they used to stand there trying for ever and never went back to work.
-  Now they pick another place to go, or go back to work when their break is over.
+workers_unstuck_tooltip: Workers on a break walk to a garden, a maypole or another nice building. If their
+  way there gets blocked, they used to stand there trying for ever and never went back to work. Now they
+  pick another place to go, or go back to work when their break is over.
 workers_jobs_unstuck: Workers stuck on the way to work are replaced
-workers_jobs_unstuck_tooltip: |
-  A worker whose way to work, to the stockpile or to the granary stays blocked used to stand
-  there trying for ever. Now, after about five seconds of failed tries, they leave the way
-  the game already handles workers who can't reach their work, and a new worker comes from
-  the campfire. Anything they were carrying is lost, as in the game.
+workers_jobs_unstuck_tooltip: A worker whose way to work, to the stockpile or to the granary stays blocked
+  used to stand there trying for ever. Now, after about five seconds of failed tries, they leave the way
+  the game already handles workers who can't reach their work, and a new worker comes from the campfire.
+  Anything they were carrying is lost, as in the game.
 ignore_quarry_piles: Aggressive troops leave quarry stockpiles alone
-ignore_quarry_piles_tooltip: |
-  Troops on aggressive stance no longer go off on their own to attack an enemy's quarry
-  stockpile (the stone pile next to a quarry), just like they already ignore the main
-  stockpile. You can still order them to attack it.
+ignore_quarry_piles_tooltip: Troops on aggressive stance no longer go off on their own to attack an enemy's
+  quarry stockpile (the stone pile next to a quarry), just like they already ignore the main stockpile.
+  You can still order them to attack it.
 rebuild_limit: Failed routes don't rebuild the whole map
-rebuild_limit_tooltip: |
-  When a unit's route can't be laid out (a spot where the ways only lead one direction), the
-  game rebuilds every path on the whole map before giving up - and the unit tries again a few
-  moments later, so a handful of stuck units can make the game crawl. Now that rebuild happens
-  at most every so often; in between the route just fails, which costs nothing.
+rebuild_limit_tooltip: When a unit's route can't be laid out (a spot where the ways only lead one direction),
+  the game rebuilds every path on the whole map before giving up - and the unit tries again a few moments
+  later, so a handful of stuck units can make the game crawl. Now that rebuild happens at most every so
+  often; in between the route just fails, which costs nothing.
 rebuild_every_ticks: Rebuild the map's paths at most every (game ticks)
-rebuild_every_ticks_tooltip: |
-  200 ticks are a few seconds at normal speed.
+rebuild_every_ticks_tooltip: 200 ticks are a few seconds at normal speed.
+balance_changes: Balance Changes
+bugfixes: Bugfixes
+qol: Quality of Life
+tags.behavior: Behavior
+tags.bugfixes: Bug fixes

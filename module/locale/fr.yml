@@ -1,0 +1,25 @@
+assassins_resume: Reprendre l’ordre
+assassins_resume_tooltip: Après un combat, les assassins reprennent leur trajet vers la destination initiale.
+assassins_shortcut: Raccourci par les murs
+assassins_shortcut_tooltip: Les assassins grimpent si le trajet est nettement plus court. Désactivez avec
+  les règles de trajet des portes.
+shortcut_ground_steps: Trajet court au sol (cases)
+shortcut_ground_steps_tooltip: En dessous de cette distance, le trajet au sol est conservé.
+shortcut_saving_percent: Gain minimum (%)
+shortcut_saving_percent_tooltip: Escalader doit raccourcir le trajet d’au moins ce pourcentage.
+workers_unstuck: Pauses bloquées
+workers_unstuck_tooltip: Un ouvrier change de lieu de pause ou retourne au travail.
+workers_jobs_unstuck: Remplacer les ouvriers bloqués
+workers_jobs_unstuck_tooltip: Après des échecs répétés, un remplaçant arrive du feu de camp. La charge
+  est perdue.
+ignore_quarry_piles: Ignorer les tas de pierre
+ignore_quarry_piles_tooltip: Les troupes agressives n’attaquent ces tas que sur ordre.
+rebuild_limit: Limiter les recalculs
+rebuild_limit_tooltip: Un trajet impossible déclenche moins souvent le recalcul de toute la carte.
+rebuild_every_ticks: Intervalle minimal (ticks)
+rebuild_every_ticks_tooltip: 200 ticks durent quelques secondes à vitesse normale.
+balance_changes: Modifications de l'équilibrage
+bugfixes: Corrections de bugs
+qol: Qualité de vie
+tags.behavior: Comportement
+tags.bugfixes: Corrections

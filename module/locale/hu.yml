@@ -1,0 +1,24 @@
+assassins_resume: Parancs folytatása
+assassins_resume_tooltip: Harc után a bérgyilkos az eredeti célhoz indul.
+assassins_shortcut: Falakon át rövidíteni
+assassins_shortcut_tooltip: A bérgyilkos csak jelentős rövidítésért mászik. Kapuútvonal-szabályok mellett
+  kapcsold ki.
+shortcut_ground_steps: Rövid földi út (mező)
+shortcut_ground_steps_tooltip: Ennél rövidebb útnál a földön marad.
+shortcut_saving_percent: Minimális útnyereség (%)
+shortcut_saving_percent_tooltip: A mászásnak legalább ennyivel kell rövidítenie az utat.
+workers_unstuck: Elakadt pihenők
+workers_unstuck_tooltip: A munkás új pihenőhelyet keres vagy visszatér dolgozni.
+workers_jobs_unstuck: Elakadt munkások cseréje
+workers_jobs_unstuck_tooltip: Több sikertelen kísérlet után új munkás jön a tűztől. A rakomány elvész.
+ignore_quarry_piles: Kőrakások figyelmen kívül hagyása
+ignore_quarry_piles_tooltip: A támadó állású egység csak parancsra támadja őket.
+rebuild_limit: Újraszámítás korlátozása
+rebuild_limit_tooltip: A sikertelen út ritkábban számoltatja újra a teljes térképet.
+rebuild_every_ticks: Legkisebb időköz (ütem)
+rebuild_every_ticks_tooltip: 200 ütem normál sebességen néhány másodperc.
+balance_changes: Balance Changes
+bugfixes: Bugfixes
+qol: Quality of Life
+tags.behavior: Viselkedés
+tags.bugfixes: Hibajavítások

@@ -1,0 +1,24 @@
+assassins_resume: Продолжать приказ
+assassins_resume_tooltip: После боя ассасины снова идут к исходной цели.
+assassins_shortcut: Сокращать путь по стене
+assassins_shortcut_tooltip: Ассасины лезут на стену ради заметной экономии пути. Отключите при правилах
+  маршрутов через ворота.
+shortcut_ground_steps: Короткий наземный путь (клетки)
+shortcut_ground_steps_tooltip: Более короткие наземные пути сохраняются.
+shortcut_saving_percent: Минимальная экономия (%)
+shortcut_saving_percent_tooltip: Подъём должен сократить путь хотя бы на эту долю.
+workers_unstuck: Тупик на перерыве
+workers_unstuck_tooltip: Рабочий выбирает другое место отдыха или возвращается к работе.
+workers_jobs_unstuck: Замена застрявших рабочих
+workers_jobs_unstuck_tooltip: После повторных неудач приходит замена от костра. Груз теряется.
+ignore_quarry_piles: Игнорировать склады при каменоломне
+ignore_quarry_piles_tooltip: Агрессивные бойцы атакуют их только по приказу.
+rebuild_limit: Ограничить пересчёт путей
+rebuild_limit_tooltip: Неудачный маршрут реже вызывает пересчёт всей карты.
+rebuild_every_ticks: Минимальный интервал (такты)
+rebuild_every_ticks_tooltip: 200 тактов — несколько секунд на обычной скорости.
+balance_changes: Balance Changes
+bugfixes: Bugfixes
+qol: Quality of Life
+tags.behavior: Поведение
+tags.bugfixes: Исправления

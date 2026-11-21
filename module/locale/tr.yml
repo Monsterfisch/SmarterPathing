@@ -1,0 +1,25 @@
+assassins_resume: Emre geri dön
+assassins_resume_tooltip: Suikastçılar çatışmadan sonra önceki hedeflerine gider.
+assassins_shortcut: Tırmanarak kestirme
+assassins_shortcut_tooltip: Suikastçı ancak yol belirgin kısalırsa tırmanır. Kapı yol kuralları açıkken
+  kapatın.
+shortcut_ground_steps: Kısa zemin yolu (kare)
+shortcut_ground_steps_tooltip: Bu mesafenin altında zeminden gidilir.
+shortcut_saving_percent: En az yol kazancı (%)
+shortcut_saving_percent_tooltip: Tırmanış yolu en az bu oranda kısaltmalı.
+workers_unstuck: Mola yolu tıkanınca
+workers_unstuck_tooltip: İşçi başka bir mola yeri arar veya işine döner.
+workers_jobs_unstuck: Sıkışan işçiyi değiştir
+workers_jobs_unstuck_tooltip: Tekrarlanan başarısız denemelerden sonra kamp ateşinden yenisi gelir. Yük
+  kaybolur.
+ignore_quarry_piles: Taş yığınlarını yok say
+ignore_quarry_piles_tooltip: Saldırgan birlikler taş ocağı yığınlarına yalnızca emirle saldırır.
+rebuild_limit: Yenilemeleri sınırla
+rebuild_limit_tooltip: Başarısız rota tüm haritanın yollarını daha seyrek yeniler.
+rebuild_every_ticks: En kısa aralık (tik)
+rebuild_every_ticks_tooltip: Normal hızda 200 tik birkaç saniyedir.
+balance_changes: Balance Changes
+bugfixes: Bugfixes
+qol: Quality of Life
+tags.behavior: Davranış
+tags.bugfixes: Hata düzeltmeleri

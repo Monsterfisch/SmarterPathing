@@ -1,0 +1,23 @@
+assassins_resume: 继续原命令
+assassins_resume_tooltip: 刺客战斗结束后继续前往原目标。
+assassins_shortcut: 攀墙抄近路
+assassins_shortcut_tooltip: 只有明显缩短路线时才攀墙。启用城门寻路规则时请关闭此项。
+shortcut_ground_steps: 短地面路线（格）
+shortcut_ground_steps_tooltip: 地面路线短于此值时直接步行。
+shortcut_saving_percent: 最小路程缩短比例（%）
+shortcut_saving_percent_tooltip: 攀墙必须至少缩短这么多路程。
+workers_unstuck: 休息途中受阻
+workers_unstuck_tooltip: 工人会另找休息地点或返回工作。
+workers_jobs_unstuck: 替换受阻工人
+workers_jobs_unstuck_tooltip: 多次寻路失败后，篝火处会派来替工，原工人携带的物资会丢失。
+ignore_quarry_piles: 忽略采石场石堆
+ignore_quarry_piles_tooltip: 攻击姿态的部队只在接到命令时攻击石堆。
+rebuild_limit: 限制全图重建
+rebuild_limit_tooltip: 寻路失败时降低全图路径重建频率。
+rebuild_every_ticks: 最小间隔（游戏刻）
+rebuild_every_ticks_tooltip: 正常速度下，200 游戏刻约为几秒。
+balance_changes: Balance Changes
+bugfixes: Bugfixes
+qol: Quality of Life
+tags.behavior: 行为
+tags.bugfixes: 错误修复
