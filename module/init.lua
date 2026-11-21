@@ -82,9 +82,11 @@ local FINAL_DESTINATION_SIZE = 14
 local CLIMB_FLAG_CLEAR = { 0x9D, { 0x89, 0x1D } }
 local CLIMB_FLAG_TEST = { 0x1F4, { 0x39, 0x1D } }
 -- setDestinationForUnit's call of PathFindingState::doPathfinding(owner, canClimbTowers).
--- smarter-gatehouses redirects the same call, so its target is read, not assumed.
+-- Gatehouse Fixes also patches this call. Compare it with the original callee.
 local AOB_ROUTE_CALL = "0F BF 8E AA 06 00 00 8B 44 24 14 50 51 B9 ? ? ? ? E8 ? ? ? ?"
 local ROUTE_CALL = 18
+local AOB_DO_PATHFINDING = "56 8B F1 8B 46 0C 8B 4E 14 8D 04 40 8B 04 85 ? ? ? ? 03 46 08 8D "
+  .. "0C 49 8B 0C 8D ? ? ? ? 03 4E 10 0F B7 14 45 ? ? ? ?"
 -- PathFindingState::bindPathPlanToAlgorithmStateAndReset: the route is written to the
 -- buffer at +0x1BB38 (0x190 bytes, four bits a step), its length is +0x1BB3C.
 local AOB_BIND_PLAN = "8B 44 24 04 89 81 38 BB 01 00 C7 81 3C BB 01 00 00 00 00 00 C2 04 00"
@@ -164,7 +166,7 @@ local SAVE_CLIMBERS = "assassin-climbers-v1.bin"
 
 local function scan(pattern, purpose)
   local ok, address = pcall(core.AOBScan, pattern)
-  if not ok or address == nil then
+  if not ok or not address or address == 0 then
     error(MODULE_NAME .. ": could not find " .. purpose)
   end
   return address
@@ -222,18 +224,19 @@ end
 -- Saved games
 ---------------------------------------------------------------------------------------
 
--- Keeps the climbers table (one byte per unit, 1 = its order lets it climb) in saved games.
-local function saveClimbers(climbers)
-  local function wipe()
-    core.setMemory(climbers, 0, MAX_UNITS)
+-- Only climb orders are persisted. Retry records are local to the loaded world.
+local function registerWorldState(climbers, failures, limiter)
+  local function reset()
+    if climbers then core.setMemory(climbers, 0, MAX_UNITS) end
+    if failures then core.setMemory(failures, 0, MAX_UNITS * 5) end
+    if limiter then core.setMemory(limiter, 0, 12) end
   end
 
   modules["map-extensions"]:registerSection(SAVE_SECTION, {
-    initialize = function(self)
-      wipe()
-    end,
+    initialize = reset,
 
     serialize = function(self, handle)
+      if not climbers then return end
       local ids = {}
       for position in core.readString(climbers, MAX_UNITS):gmatch("()[^\0]") do
         ids[#ids + 1] = string.pack("<I2", position - 1)
@@ -242,8 +245,8 @@ local function saveClimbers(climbers)
     end,
 
     deserialize = function(self, handle)
-      wipe()
-      if not handle:exists(SAVE_CLIMBERS) then
+      reset()
+      if not climbers or not handle:exists(SAVE_CLIMBERS) then
         return
       end
       local data = handle:get(SAVE_CLIMBERS)
@@ -268,6 +271,25 @@ local function climbFlag()
 end
 
 local function enable(self, config)
+  local routeCall, search
+  if setting(config, "assassinsShortcut") then
+    routeCall = scan(AOB_ROUTE_CALL, "setDestinationForUnit's route search") + ROUTE_CALL
+    search = scan(AOB_DO_PATHFINDING, "the original route search")
+    local nextCall = core.scanForAOB(AOB_ROUTE_CALL, routeCall - ROUTE_CALL + 1)
+    local nextSearch = core.scanForAOB(AOB_DO_PATHFINDING, search + 1)
+    if (nextCall and nextCall ~= 0) or (nextSearch and nextSearch ~= 0) then
+      error(MODULE_NAME .. ": the route call or original search signature is ambiguous")
+    end
+    expectBytes(routeCall, { 0xE8 }, "setDestinationForUnit's route search")
+    if (routeCall + 5 + core.readInteger(routeCall + 1)) & 0xFFFFFFFF ~= search then
+      error("smarter-pathing.assassinsShortcut cannot be combined with "
+      .. "smarter-gatehouses.pathing.enemy_gates_closed, smarter-gatehouses.walls.stairs_needed "
+      .. "or smarter-gatehouses.walls.stairs_needed_ai. Disable the assassin shortcut or all three "
+      .. "gate route options. The native route call may also be occupied by another module.")
+    end
+  end
+
+  local climbers, failures, limiter
   if setting(config, "workersUnstuck") then
     local site = scan(AOB_RESTING, "the workers' break (SetRestingForUnit)")
     local values = {
@@ -284,6 +306,7 @@ local function enable(self, config)
     local site = scan(AOB_ROUTE_FAILED, "processUnitMove's failed route search")
     local data = core.allocate(TYPE_COUNT + MAX_UNITS * 5, true)
     local jobWorkers = data
+    failures = data + TYPE_COUNT
     for _, unitType in ipairs(JOB_WORKER_TYPES) do
       core.writeByte(jobWorkers + unitType, 1)
     end
@@ -315,11 +338,9 @@ local function enable(self, config)
     core.writeCode(entry, { 0 })
   end
 
-  if setting(config, "assassinsShortcut") then
+  if routeCall then
     local _, flag = climbFlag()
     scan(AOB_BIND_PLAN, "where a route is written")
-    local call = scan(AOB_ROUTE_CALL, "setDestinationForUnit's route search") + ROUTE_CALL
-    local search = (call + 5 + core.readInteger(call + 1)) & 0xFFFFFFFF
     local choice = assemble(templates.climbChoice, {
       CLIMB_FLAG = flag,
       SEARCH = search,
@@ -330,18 +351,19 @@ local function enable(self, config)
       PLAN_BYTES = PLAN_BYTES,
       SAVED_PLAN = core.allocate(PLAN_BYTES, true),
     })
-    core.writeCode(call, { 0xE8, core.itob(core.getRelativeAddress(call, choice, -5)) })
+    core.writeCode(routeCall, { 0xE8, core.itob(core.getRelativeAddress(routeCall, choice, -5)) })
   end
 
   if setting(config, "rebuildLimit") then
     local site = scan(AOB_TRACE_FAILED, "traceAndCommitPathPlan's failure branch")
     expectBytes(site + TRACE_FAILED_DONE[1], TRACE_FAILED_DONE[2], "traceAndCommitPathPlan's failure branch")
     local call = site + TRACE_FAILED_CALL
-    local data = core.allocate(8, true)
+    limiter = core.allocate(12, true)
     local limit = assemble(templates.rebuildLimit, {
       TICKS = core.readInteger(scan(AOB_TICKS, "the game tick counter") + TICKS_OPERAND),
-      LAST = data,
-      SKIPPED = data + 4,
+      LAST = limiter,
+      SKIPPED = limiter + 4,
+      HAS_REBUILT = limiter + 8,
       LIMIT = number(config, "rebuildEveryTicks", 1, 100000),
       REBUILD = (call + 5 + core.readInteger(call + 1)) & 0xFFFFFFFF,
       DONE = site + TRACE_FAILED_DONE[1],
@@ -351,8 +373,7 @@ local function enable(self, config)
 
   if setting(config, "assassinsResume") then
     local site, flag = climbFlag()
-    local climbers = core.allocate(MAX_UNITS, true)
-    saveClimbers(climbers)
+    climbers = core.allocate(MAX_UNITS, true)
     jumpTo(site, assemble(templates.remember, {
       UNIT_TYPE = UNITS_FROM_STATE + U_TYPE,
       DEST_X = UNITS_FROM_STATE + U_DEST_X,
@@ -363,6 +384,9 @@ local function enable(self, config)
       CLIMBERS = climbers,
       RESUME = site + FINAL_DESTINATION_SIZE,
     }), FINAL_DESTINATION_SIZE)
+  end
+  if climbers or failures or limiter then
+    registerWorldState(climbers, failures, limiter)
   end
 end
 

@@ -135,10 +135,14 @@ finish:
 -- The branch's opening bytes stay as they are (Improved Tunnelers hooks those).
 templates.rebuildLimit = [[
   mov eax, [TICKS]
+  cmp dword [HAS_REBUILT], 0
+  je rebuild
   mov edx, eax
   sub edx, [LAST]
   cmp edx, LIMIT
   jb skip
+rebuild:
+  mov dword [HAS_REBUILT], 1
   mov [LAST], eax
   jmp REBUILD
 skip:
