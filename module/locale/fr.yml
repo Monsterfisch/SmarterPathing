@@ -1,25 +1,28 @@
-assassins_resume: Reprendre l’ordre
-assassins_resume_tooltip: Après un combat, les assassins reprennent leur trajet vers la destination initiale.
-assassins_shortcut: Raccourci par les murs
-assassins_shortcut_tooltip: Les assassins grimpent si le trajet est nettement plus court. Désactivez avec
-  les règles de trajet des portes.
-shortcut_ground_steps: Trajet court au sol (cases)
-shortcut_ground_steps_tooltip: En dessous de cette distance, le trajet au sol est conservé.
-shortcut_saving_percent: Gain minimum (%)
-shortcut_saving_percent_tooltip: Escalader doit raccourcir le trajet d’au moins ce pourcentage.
-workers_unstuck: Pauses bloquées
-workers_unstuck_tooltip: Un ouvrier change de lieu de pause ou retourne au travail.
-workers_jobs_unstuck: Remplacer les ouvriers bloqués
-workers_jobs_unstuck_tooltip: Après des échecs répétés, un remplaçant arrive du feu de camp. La charge
-  est perdue.
-ignore_quarry_piles: Ignorer les tas de pierre
-ignore_quarry_piles_tooltip: Les troupes agressives n’attaquent ces tas que sur ordre.
-rebuild_limit: Limiter les recalculs
-rebuild_limit_tooltip: Un trajet impossible déclenche moins souvent le recalcul de toute la carte.
-rebuild_every_ticks: Intervalle minimal (ticks)
-rebuild_every_ticks_tooltip: 200 ticks durent quelques secondes à vitesse normale.
+assassins_resume: Les assassins reprennent leur route après un combat
+assassins_resume_tooltip: |-
+  Lorsque des assassins envoyés quelque part croisent des ennemis et les combattent, ils reprennent leur chemin vers leur destination une fois le combat terminé, en escaladant les murs comme avant. Sans cette option, ils s'arrêtaient souvent là où le combat s'achevait.
+assassins_shortcut: Les assassins n'escaladent que si c'est nettement plus court
+assassins_shortcut_tooltip: |-
+  Les assassins cherchent d'abord un chemin au sol et empruntent toujours un trajet court. Si le trajet est long, ils évaluent aussi le passage par les murs et n'escaladent que si c'est nettement plus court. Fini les escalades inutiles quand un détour suffit. Désactivez cette option si Gatehouse Fixes considère les portes ennemies comme fermées ou impose des escaliers aux troupes humaines ou IA.
+shortcut_ground_steps: Les trajets plus courts ne sont jamais remplacés par l'escalade (cases)
+shortcut_ground_steps_tooltip: Si le chemin au sol compte moins de cases que ce seuil, les assassins y vont simplement à pied.
+shortcut_saving_percent: L'escalade doit raccourcir le trajet d'au moins (pour cent)
+shortcut_saving_percent_tooltip: Avec 25, les assassins n'escaladent que si le passage par les murs est au moins un quart plus court qu'à pied. Avec 0, ils prennent toujours le plus court.
+workers_unstuck: Les ouvriers en pause ne restent plus bloqués
+workers_unstuck_tooltip: |-
+  Les ouvriers en pause se rendent vers un jardin, un mât de mai ou un autre bâtiment agréable. Si leur chemin était bloqué, ils restaient figés indéfiniment sans jamais retourner travailler. Désormais, ils choisissent un autre lieu ou reprennent le travail à la fin de leur pause.
+workers_jobs_unstuck: Les ouvriers bloqués sur le trajet du travail sont remplacés
+workers_jobs_unstuck_tooltip: |-
+  Un ouvrier dont l'accès au travail, à la réserve ou au grenier restait bloqué finissait bloqué pour toujours. Désormais, après environ cinq secondes d'essais infructueux, il quitte son poste comme le jeu gère déjà les ouvriers bloqués, et un nouvel ouvrier arrive du feu de camp. Les marchandises transportées sont perdues, comme dans le jeu d'origine.
+ignore_quarry_piles: Les troupes agressives ignorent les réserves de carrière
+ignore_quarry_piles_tooltip: Les troupes en posture agressive ne partent plus d'elles-mêmes attaquer le tas de pierres d'une carrière ennemie, tout comme elles ignorent déjà la réserve principale. Vous pouvez toujours leur ordonner de l'attaquer.
+rebuild_limit: Les trajets impossibles ne recalculent pas toute la carte
+rebuild_limit_tooltip: |-
+  Lorsqu'un trajet ne peut pas être tracé (zones à sens unique), le jeu reconstruit tous les chemins de la carte avant d'abandonner — et l'unité réessaie quelques instants plus tard, si bien qu'une poignée d'unités bloquées fait ramer le jeu. Désormais, ce recalcul n'a lieu qu'à l'intervalle choisi ; entre-temps, le trajet échoue simplement sans coût.
+rebuild_every_ticks: Recalculer les chemins de la carte au plus tous les (ticks de jeu)
+rebuild_every_ticks_tooltip: 200 ticks représentent quelques secondes à vitesse normale.
 balance_changes: Modifications de l'équilibrage
-bugfixes: Corrections de bugs
+bugfixes: Corrections
 qol: Qualité de vie
 tags.behavior: Comportement
 tags.bugfixes: Corrections

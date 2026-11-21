@@ -1,24 +1,28 @@
-assassins_resume: Auftrag fortsetzen
-assassins_resume_tooltip: Assassinen verfolgen nach dem Kampf wieder das ursprüngliche Ziel.
-assassins_shortcut: Kletterabkürzung
-assassins_shortcut_tooltip: Assassinen klettern nur bei deutlicher Abkürzung. Mit Tor-Routenregeln deaktivieren.
-shortcut_ground_steps: Kurzer Bodenweg (Felder)
-shortcut_ground_steps_tooltip: Unter dieser Länge bleibt der Weg am Boden.
-shortcut_saving_percent: Minimale Wegersparnis (%)
-shortcut_saving_percent_tooltip: Klettern muss den Weg um diesen Anteil kürzen.
-workers_unstuck: Blockierte Pausenwege
-workers_unstuck_tooltip: Arbeiter suchen ein anderes Ziel oder gehen wieder arbeiten.
-workers_jobs_unstuck: Feststeckende Arbeiter ersetzen
-workers_jobs_unstuck_tooltip: Nach wiederholtem Scheitern kommt Ersatz vom Lagerfeuer. Getragene Waren
-  gehen verloren.
-ignore_quarry_piles: Steinhaufen ignorieren
-ignore_quarry_piles_tooltip: Aggressive Truppen greifen Steinbruchlager nur auf Befehl an.
-rebuild_limit: Neuberechnungen begrenzen
-rebuild_limit_tooltip: Fehlgeschlagene Wege lösen seltener eine Neuberechnung der ganzen Karte aus.
-rebuild_every_ticks: Mindestabstand (Ticks)
-rebuild_every_ticks_tooltip: 200 Ticks sind bei normalem Tempo einige Sekunden.
-balance_changes: Balance Changes
-bugfixes: Bugfixes
-qol: Quality of Life
+assassins_resume: Assassinen setzen Befehl nach einem Kampf fort
+assassins_resume_tooltip: |-
+  Wenn ausgesandte Assassinen auf Feinde treffen und kämpfen, ziehen sie nach dem Kampf weiter zu ihrem ursprünglichen Ziel und erklimmen unterwegs weiterhin Mauern wie zuvor. Ohne diese Option blieben sie oft einfach dort stehen, wo der Kampf endete.
+assassins_shortcut: Assassinen klettern nur bei deutlicher Abkürzung
+assassins_shortcut_tooltip: |-
+  Assassinen suchen zuerst nach einem Weg am Boden. Kurze Wege werden immer gelaufen. Bei einem langen Fußweg prüfen sie zusätzlich den Weg über Mauern und klettern nur, wenn dieser deutlich kürzer ist. Kein unnötiges Auf- und Abklettern mehr, wenn ein Umweg zu Fuß genügt. Deaktiviere diese Option, wenn Torhauskorrekturen (Gatehouse Fixes) feindliche Tore als geschlossen behandelt oder Treppen für menschliche bzw. KI-Truppen erzwingt.
+shortcut_ground_steps: Kürzere Fußwege werden nie durch Klettern ersetzt (Felder)
+shortcut_ground_steps_tooltip: Ist der Weg am Boden kürzer als so viele Felder, laufen Assassinen einfach zu Fuß.
+shortcut_saving_percent: Klettern muss mindestens so viel Weg einsparen (Prozent)
+shortcut_saving_percent_tooltip: Bei 25 klettern Assassinen nur, wenn der Weg über Mauern mindestens ein Viertel kürzer ist als der Fußweg. Bei 0 nehmen sie stets den kürzeren Weg.
+workers_unstuck: Arbeiter in der Pause bleiben nicht mehr stecken
+workers_unstuck_tooltip: |-
+  Arbeiter in der Pause laufen zu einem Garten, Maibaum oder einem anderen schönen Gebäude. Wurde ihr Weg dorthin blockiert, blieben sie früher endlos stehen und kehrten nie zur Arbeit zurück. Nun suchen sie ein anderes Ziel oder gehen nach Pausenende zurück an die Arbeit.
+workers_jobs_unstuck: Auf dem Arbeitsweg steckengebliebene Arbeiter werden ersetzt
+workers_jobs_unstuck_tooltip: |-
+  Ein Arbeiter, dessen Weg zur Arbeit, zum Vorratslager oder zum Kornspeicher dauerhaft blockiert war, blieb früher endlos stehen. Nun gibt er nach etwa fünf Sekunden fehlgeschlagener Versuche auf die spielübliche Weise auf, und ein neuer Arbeiter rückt vom Lagerfeuer nach. Getragene Güter gehen dabei wie im Originalspiel verloren.
+ignore_quarry_piles: Aggressive Truppen lassen Steinbruch-Lager in Ruhe
+ignore_quarry_piles_tooltip: Truppen in aggressiver Haltung greifen nicht mehr von selbst feindliche Steinbruch-Lager (den Steinhaufen neben einem Steinbruch) an, genau wie sie bereits das Haupt-Vorratslager ignorieren. Manuell kannst du sie weiterhin darauf ansetzen.
+rebuild_limit: Fehlgeschlagene Routen bauen nicht die ganze Karte neu auf
+rebuild_limit_tooltip: |-
+  Kann die Route einer Einheit nicht berechnet werden (an einer Stelle mit Einbahnwegen), baut das Spiel alle Pfade der gesamten Karte neu auf, bevor es aufgibt – und kurz darauf versucht es die Einheit erneut, sodass eine Handvoll blockierter Einheiten das Spiel zum Ruckeln bringt. Nun geschieht dieser Neuaufbau höchstens im eingestellten Abstand; dazwischen schlägt die Route einfach kostenfrei fehl.
+rebuild_every_ticks: Kartenpfade höchstens alle so viele Spielticks neu aufbauen
+rebuild_every_ticks_tooltip: 200 Ticks entsprechen bei normaler Geschwindigkeit einigen Sekunden.
+balance_changes: Balance-Änderungen
+bugfixes: Fehlerkorrekturen
+qol: Komfortfunktionen
 tags.behavior: Verhalten
 tags.bugfixes: Fehlerkorrekturen

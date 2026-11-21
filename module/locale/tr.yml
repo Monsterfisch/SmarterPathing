@@ -1,25 +1,28 @@
-assassins_resume: Emre geri dön
-assassins_resume_tooltip: Suikastçılar çatışmadan sonra önceki hedeflerine gider.
-assassins_shortcut: Tırmanarak kestirme
-assassins_shortcut_tooltip: Suikastçı ancak yol belirgin kısalırsa tırmanır. Kapı yol kuralları açıkken
-  kapatın.
-shortcut_ground_steps: Kısa zemin yolu (kare)
-shortcut_ground_steps_tooltip: Bu mesafenin altında zeminden gidilir.
-shortcut_saving_percent: En az yol kazancı (%)
-shortcut_saving_percent_tooltip: Tırmanış yolu en az bu oranda kısaltmalı.
-workers_unstuck: Mola yolu tıkanınca
-workers_unstuck_tooltip: İşçi başka bir mola yeri arar veya işine döner.
-workers_jobs_unstuck: Sıkışan işçiyi değiştir
-workers_jobs_unstuck_tooltip: Tekrarlanan başarısız denemelerden sonra kamp ateşinden yenisi gelir. Yük
-  kaybolur.
-ignore_quarry_piles: Taş yığınlarını yok say
-ignore_quarry_piles_tooltip: Saldırgan birlikler taş ocağı yığınlarına yalnızca emirle saldırır.
-rebuild_limit: Yenilemeleri sınırla
-rebuild_limit_tooltip: Başarısız rota tüm haritanın yollarını daha seyrek yeniler.
-rebuild_every_ticks: En kısa aralık (tik)
-rebuild_every_ticks_tooltip: Normal hızda 200 tik birkaç saniyedir.
-balance_changes: Balance Changes
-bugfixes: Bugfixes
-qol: Quality of Life
+assassins_resume: Suikastçılar çatışma sonrası yoluna devam eder
+assassins_resume_tooltip: |-
+  Bir yere gönderdiğin suikastçılar yolda düşmanla karşılaşıp savaştığında, çatışma bitince eskisi gibi surlara tırmanarak gönderdiğin yere yürümeye devam ederler. Bu ayar olmadan çoğu zaman çatışmanın bittiği yerde duruyorlardı.
+assassins_shortcut: Suikastçılar yalnızca belirgin kestirme varsa tırmanır
+assassins_shortcut_tooltip: |-
+  Suikastçılar önce yerden bir yol arar; kısa bir yürüyüş her zaman tercih edilir. Yürüyüş uzunsa surların üzerinden geçen yolu da kontrol eder ve yalnızca belirgin şekilde daha kısaysa tırmanırlar. Etraftan dolanmak yeterliyken gereksiz sur tırmanışı biter. Gatehouse Fixes düşman kapılarını kapalı sayıyor ya da oyuncu veya yapay zekâ birlikleri için merdiven gerektiriyorsa bunu kapatın.
+shortcut_ground_steps: Bundan kısa yürüyüşler asla tırmanmayla değiştirilmez (kare)
+shortcut_ground_steps_tooltip: Yerden yol bu sayıdan daha az kare ise suikastçılar yürüyerek gider.
+shortcut_saving_percent: Tırmanma yürüyüşten en az bu kadar tasarruf etmeli (yüzde)
+shortcut_saving_percent_tooltip: 25 ile suikastçılar yalnızca sur üzerinden yol yürümekten en az dörtte bir daha kısaysa tırmanır. 0 ile hangisi kısaysa onu seçerler.
+workers_unstuck: Moladaki işçiler takılıp kalmaz
+workers_unstuck_tooltip: |-
+  Moladaki işçiler bir bahçeye, direğe veya başka bir hoş binaya yürür. Oraya giden yol kapanırsa eskiden sonsuza dek bekleyip işe dönmezlerdi. Artık başka bir yer seçer ya da mola bitince işlerine dönerler.
+workers_jobs_unstuck: İş yolunda takılan işçiler yenileriyle değiştirilir
+workers_jobs_unstuck_tooltip: |-
+  İş yerine, depoya veya ambara yolu kapalı kalan bir işçi eskiden sonsuza dek uğraşıp dururdu. Artık yaklaşık beş saniyelik başarısız denemenin ardından oyunun ulaşamayan işçiler için kullandığı yolla ayrılır ve kamp ateşinden yeni bir işçi gelir. Taşıdığı mallar oyundaki gibi kaybolur.
+ignore_quarry_piles: Saldırgan birlikler taş ocağı yığınlarını görmezden gelir
+ignore_quarry_piles_tooltip: Saldırgan duruştaki birlikler artık ana depoyu görmezden geldikleri gibi düşmanın taş ocağı deposuna (taş ocağının yanındaki taş yığınına) da kendiliğinden saldırmaz. Yine de elle saldırı emri verebilirsin.
+rebuild_limit: Başarısız rotalar tüm haritayı yeniden hesaplatmaz
+rebuild_limit_tooltip: |-
+  Bir birimin rotası çizilemediğinde (yolların tek yönlü olduğu bir noktada), oyun vazgeçmeden önce tüm haritanın yollarını yeniden kurar — birim birkaç an sonra tekrar denediği için birkaç takılı birim bile oyunu süründürür. Artık bu yeniden kurma en fazla belirli aralıklarla yapılır; arada rota yük bindirmeden başarısız olur.
+rebuild_every_ticks: Harita yollarını en fazla şu aralıkla yeniden kur (oyun tıkı)
+rebuild_every_ticks_tooltip: Normal hızda 200 tık birkaç saniyedir.
+balance_changes: Denge değişiklikleri
+bugfixes: Hata düzeltmeleri
+qol: Yaşam kalitesi
 tags.behavior: Davranış
 tags.bugfixes: Hata düzeltmeleri

@@ -1,24 +1,28 @@
-assassins_resume: Retomar la orden
-assassins_resume_tooltip: Tras el combate los asesinos vuelven a la ruta original.
-assassins_shortcut: Atajo por los muros
-assassins_shortcut_tooltip: Los asesinos escalan si ahorran bastante camino. Desactívalo con reglas de
-  rutas de puertas.
-shortcut_ground_steps: Ruta corta a pie (casillas)
-shortcut_ground_steps_tooltip: Se mantiene el camino a pie por debajo de esta distancia.
-shortcut_saving_percent: Ahorro mínimo (%)
-shortcut_saving_percent_tooltip: Escalar debe acortar el trayecto al menos en ese porcentaje.
-workers_unstuck: Descansos bloqueados
-workers_unstuck_tooltip: El trabajador busca otro lugar o vuelve al trabajo.
-workers_jobs_unstuck: Sustituir trabajadores atascados
-workers_jobs_unstuck_tooltip: Tras varios intentos llega un reemplazo de la hoguera. La carga se pierde.
-ignore_quarry_piles: Ignorar montones de piedra
-ignore_quarry_piles_tooltip: Las tropas agresivas solo atacan esos montones por orden.
-rebuild_limit: Limitar recálculos
-rebuild_limit_tooltip: Una ruta fallida provoca con menos frecuencia un recálculo de todo el mapa.
-rebuild_every_ticks: Intervalo mínimo (ticks)
-rebuild_every_ticks_tooltip: 200 ticks equivalen a unos segundos a velocidad normal.
-balance_changes: Balance Changes
-bugfixes: Bugfixes
-qol: Quality of Life
+assassins_resume: Los asesinos continúan su marcha tras un combate
+assassins_resume_tooltip: |-
+  Cuando los asesinos que enviaste a un lugar se cruzan con enemigos y luchan, siguen hacia su destino en cuanto acaba el combate, trepando muros como antes. Sin esto, a menudo se detenían donde terminaba la pelea.
+assassins_shortcut: Los asesinos solo trepan si es claramente más corto
+assassins_shortcut_tooltip: |-
+  Los asesinos buscan primero un camino por tierra y siempre recorren a pie un trayecto corto. Si el recorrido es largo, comprueban también el camino por los muros y solo trepan si ahorra claramente camino. Se acabó subir y bajar muros cuando basta rodear. Desactívalo si Gatehouse Fixes trata las puertas enemigas como cerradas o exige escaleras a las tropas humanas o de la IA.
+shortcut_ground_steps: Los recorridos más cortos nunca se sustituyen por trepar (casillas)
+shortcut_ground_steps_tooltip: Si el camino por tierra tiene menos casillas que este valor, los asesinos simplemente caminan.
+shortcut_saving_percent: Trepar debe ahorrar al menos este porcentaje del recorrido
+shortcut_saving_percent_tooltip: Con 25, los asesinos solo trepan si el camino por los muros es al menos un cuarto más corto que ir a pie. Con 0, toman el camino que sea más corto.
+workers_unstuck: Los trabajadores en descanso no se atascan
+workers_unstuck_tooltip: |-
+  Los trabajadores en descanso caminan hacia un jardín, un palo de mayo u otro edificio agradable. Si su camino quedaba bloqueado, antes se quedaban intentándolo para siempre sin volver al trabajo. Ahora eligen otro lugar o vuelven a trabajar al terminar su descanso.
+workers_jobs_unstuck: Los trabajadores atascados de camino al trabajo se sustituyen
+workers_jobs_unstuck_tooltip: |-
+  Un trabajador cuyo camino al trabajo, al almacén o al granero seguía bloqueado antes se quedaba intentándolo para siempre. Ahora, tras unos cinco segundos de intentos fallidos, abandona del modo habitual del juego y acude un nuevo trabajador desde la hoguera. Lo que llevaba encima se pierde, igual que en el juego original.
+ignore_quarry_piles: Las tropas agresivas ignoran los depósitos de cantera
+ignore_quarry_piles_tooltip: Las tropas en postura agresiva ya no se desvían por sí solas a atacar el depósito de piedra junto a una cantera enemiga, igual que ya ignoran el almacén principal. Aún puedes ordenarles atacarlo.
+rebuild_limit: Las rutas fallidas no reconstruyen todo el mapa
+rebuild_limit_tooltip: |-
+  Cuando no puede trazarse la ruta de una unidad (un punto con caminos de un solo sentido), el juego reconstruye todas las rutas del mapa antes de rendirse, y la unidad vuelve a intentarlo al poco tiempo, de modo que unas pocas unidades atascadas ralentizan toda la partida. Ahora esa reconstrucción ocurre como mucho cada cierto tiempo; entre tanto la ruta simplemente falla sin coste.
+rebuild_every_ticks: Reconstruir las rutas del mapa como mucho cada (ticks de juego)
+rebuild_every_ticks_tooltip: 200 ticks son unos pocos segundos a velocidad normal.
+balance_changes: Cambios de equilibrio
+bugfixes: Correcciones
+qol: Calidad de vida
 tags.behavior: Comportamiento
 tags.bugfixes: Correcciones

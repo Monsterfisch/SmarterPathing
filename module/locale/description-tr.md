@@ -1,3 +1,3 @@
-# Daha iyi yol bulma 1.0.5
+# Smarter Pathing 1.0.5
 
-Sıkışan birliklere yardım eder ve suikastçıların çatışmadan sonra emirlerine dönmesini sağlar.
+İşçilerin tıkanan yollardan kurtulmasına ve suikastçıların çatışma sonrası emirlerini sürdürmesine yardımcı olur. Ayrıca ağır yol yeniden hesaplamalarını sınırlayabilir ve suikastçıların tırmanma kestirmesi için gereken kazancı ayarlayabilirsin.

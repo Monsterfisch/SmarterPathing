@@ -1,3 +1,3 @@
-# Bessere Wegfindung 1.0.5
+# Smarter Pathing 1.0.5
 
-Einheiten finden nach blockierten Wegen leichter zurück, und Assassinen setzen nach Kämpfen ihren Auftrag fort.
+Hilft Arbeitern, sich aus blockierten Wegen zu lösen, und lässt Assassinen ihre Befehle nach einem Kampf fortsetzen. Zudem lassen sich aufwendige Pfad-Neuaufbauten begrenzen und einstellen, wie viel Weg das Klettern sparen muss, bevor Assassinen den Bodenweg verlassen.

@@ -1,23 +1,28 @@
-assassins_resume: 继续原命令
-assassins_resume_tooltip: 刺客战斗结束后继续前往原目标。
-assassins_shortcut: 攀墙抄近路
-assassins_shortcut_tooltip: 只有明显缩短路线时才攀墙。启用城门寻路规则时请关闭此项。
-shortcut_ground_steps: 短地面路线（格）
-shortcut_ground_steps_tooltip: 地面路线短于此值时直接步行。
-shortcut_saving_percent: 最小路程缩短比例（%）
-shortcut_saving_percent_tooltip: 攀墙必须至少缩短这么多路程。
-workers_unstuck: 休息途中受阻
-workers_unstuck_tooltip: 工人会另找休息地点或返回工作。
-workers_jobs_unstuck: 替换受阻工人
-workers_jobs_unstuck_tooltip: 多次寻路失败后，篝火处会派来替工，原工人携带的物资会丢失。
-ignore_quarry_piles: 忽略采石场石堆
-ignore_quarry_piles_tooltip: 攻击姿态的部队只在接到命令时攻击石堆。
-rebuild_limit: 限制全图重建
-rebuild_limit_tooltip: 寻路失败时降低全图路径重建频率。
-rebuild_every_ticks: 最小间隔（游戏刻）
-rebuild_every_ticks_tooltip: 正常速度下，200 游戏刻约为几秒。
-balance_changes: Balance Changes
-bugfixes: Bugfixes
-qol: Quality of Life
+assassins_resume: 刺客战斗后继续执行移动命令
+assassins_resume_tooltip: |-
+  当你派往某处的刺客中途遭遇敌军并交战后，战斗结束时他们会继续前往原定目的地，并照常翻越沿途城墙。没有此选项时，他们常常在战斗结束的地方停下。
+assassins_shortcut: 刺客仅在明显更近时才攀墙
+assassins_shortcut_tooltip: |-
+  刺客会先在地面寻路，短距离始终步行；只有路程较长时才会同时评估翻墙路线，且仅当翻墙明显更短时才攀爬，不再动辄上下城墙。如果 Gatehouse Fixes 将敌方城门视为关闭，或要求人类/AI 部队必须使用阶梯，请关闭此项。
+shortcut_ground_steps: 短于此距离的地面路线绝不改为攀墙（格）
+shortcut_ground_steps_tooltip: 如果地面路线短于这么多格，刺客会直接步行。
+shortcut_saving_percent: 攀墙至少需要节省的步行比例（百分比）
+shortcut_saving_percent_tooltip: 设为 25 时，只有翻墙路线比步行至少短四分之一，刺客才会攀墙；设为 0 则始终选择更短的路线。
+workers_unstuck: 休息中的工人不再卡住
+workers_unstuck_tooltip: |-
+  休息中的工人会走向花园、五朔节花柱或其他正面建筑。若道路受阻，过去他们会一直原地尝试而永不复工；现在他们会改选其他去处，或在休息结束后回到岗位。
+workers_jobs_unstuck: 上班途中受阻的工人会被替换
+workers_jobs_unstuck_tooltip: |-
+  通往工作场所、储藏区或粮仓的路线一直受阻时，工人过去会永远原地卡死。现在约五秒尝试失败后，他们会按游戏原版处理无法到达工位的方式离岗，并由篝火派出新工人。原本携带的物资会照原版一样丢失。
+ignore_quarry_piles: 进攻姿态部队忽略采石场石堆
+ignore_quarry_piles_tooltip: 处于进攻姿态的部队不再主动跑去攻击敌方采石场的储石堆（就像他们本来就忽略主储藏区一样）。你仍可手动命令他们攻击。
+rebuild_limit: 寻路失败不再重建整张地图路径
+rebuild_limit_tooltip: |-
+  当某个单位无法规划出路径（处于单向死角）时，游戏会在放弃前重建整张地图的所有路径，而该单位片刻后又会重试，导致少数卡住的单位就让游戏卡成幻灯片。现在该重建最多按设定间隔执行一次；间隔期间路径直接零开销失败。
+rebuild_every_ticks: 重建地图路径的最短间隔（游戏刻）
+rebuild_every_ticks_tooltip: 正常速度下 200 刻大约为几秒。
+balance_changes: 平衡性改动
+bugfixes: 错误修复
+qol: 体验优化
 tags.behavior: 行为
 tags.bugfixes: 错误修复

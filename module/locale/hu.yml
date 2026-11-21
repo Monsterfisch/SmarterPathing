@@ -1,24 +1,28 @@
-assassins_resume: Parancs folytatása
-assassins_resume_tooltip: Harc után a bérgyilkos az eredeti célhoz indul.
-assassins_shortcut: Falakon át rövidíteni
-assassins_shortcut_tooltip: A bérgyilkos csak jelentős rövidítésért mászik. Kapuútvonal-szabályok mellett
-  kapcsold ki.
-shortcut_ground_steps: Rövid földi út (mező)
-shortcut_ground_steps_tooltip: Ennél rövidebb útnál a földön marad.
-shortcut_saving_percent: Minimális útnyereség (%)
-shortcut_saving_percent_tooltip: A mászásnak legalább ennyivel kell rövidítenie az utat.
-workers_unstuck: Elakadt pihenők
-workers_unstuck_tooltip: A munkás új pihenőhelyet keres vagy visszatér dolgozni.
-workers_jobs_unstuck: Elakadt munkások cseréje
-workers_jobs_unstuck_tooltip: Több sikertelen kísérlet után új munkás jön a tűztől. A rakomány elvész.
-ignore_quarry_piles: Kőrakások figyelmen kívül hagyása
-ignore_quarry_piles_tooltip: A támadó állású egység csak parancsra támadja őket.
-rebuild_limit: Újraszámítás korlátozása
-rebuild_limit_tooltip: A sikertelen út ritkábban számoltatja újra a teljes térképet.
-rebuild_every_ticks: Legkisebb időköz (ütem)
-rebuild_every_ticks_tooltip: 200 ütem normál sebességen néhány másodperc.
-balance_changes: Balance Changes
-bugfixes: Bugfixes
-qol: Quality of Life
+assassins_resume: Az orgyilkosok harc után folytatják az útjukat
+assassins_resume_tooltip: |-
+  Ha az útnak indított orgyilkosok ellenségbe ütköznek és megküzdenek vele, a harc végén továbbmennek az eredeti céljuk felé, útközben a falakat ugyanúgy megmászva. Enélkül gyakran ott ragadtak, ahol a harc véget ért.
+assassins_shortcut: Az orgyilkosok csak egyértelmű rövidítésnél másznak
+assassins_shortcut_tooltip: |-
+  Az orgyilkosok először a földön keresnek utat; a rövid utat mindig gyalog teszik meg. Hosszabb útnál megvizsgálják a falakon át vezető utat is, és csak akkor másznak, ha az egyértelműen rövidebb. Nincs több felesleges falmászás, ha kerülni is egyszerű. Kapcsold ki, ha a Gatehouse Fixes zártnak tekinti az ellenséges kapukat, vagy lépcsőt ír elő emberi illetve MI-csapatoknak.
+shortcut_ground_steps: Ennél rövidebb gyalogutat sosem vált ki mászás (mező)
+shortcut_ground_steps_tooltip: Ha a földi út ennél kevesebb mező hosszú, az orgyilkosok egyszerűen végigsétálják.
+shortcut_saving_percent: A mászásnak legalább ennyit kell megtakarítania (százalék)
+shortcut_saving_percent_tooltip: 25 esetén az orgyilkosok csak akkor másznak, ha a falakon át vezető út legalább negyedével rövidebb a gyalogútnál. 0 esetén mindig a rövidebbet választják.
+workers_unstuck: A pihenő munkások nem akadnak el
+workers_unstuck_tooltip: |-
+  A pihenő munkások kerthez, májusfához vagy más szép épülethez sétálnak. Ha az útjuk elzáródott, korábban örökre ott toporogtak, és sosem tértek vissza dolgozni. Most másik helyet választanak, vagy a szünet végén visszamennek dolgozni.
+workers_jobs_unstuck: A munkába menet elakadt munkások lecserélődnek
+workers_jobs_unstuck_tooltip: |-
+  Az a munkás, akinek elzáródott az útja a munkahelyére, raktárba vagy magtárba, korábban örökre ott ragadt. Most körülbelül öt másodperc sikertelen próbálkozás után a játék megszokott módján távozik, és új munkás érkezik a tábortűztől. A nála lévő áru elvész, akárcsak az alapjátékban.
+ignore_quarry_piles: A támadó csapatok békén hagyják a kőfejtő rakásait
+ignore_quarry_piles_tooltip: A támadó harci módú csapatok már nem indulnak el maguktól megtámadni az ellenség kőfejtő melletti kőrakását, ahogy a fő raktárat is figyelmen kívül hagyják. Kézzel továbbra is rájuk küldheted őket.
+rebuild_limit: A sikertelen útvonalak nem építik újra az egész térképet
+rebuild_limit_tooltip: |-
+  Ha egy egység útvonala nem tervezhető meg (egyirányú zsákutca), a játék feladás előtt újraépíti a teljes térkép minden útvonalát — majd az egység pillanatok múlva újra próbálja, így pár elakadt egység is lelassíthatja a játékot. Mostantól az újraépítés legfeljebb a megadott időközönként történik; közben az útvonal terhelés nélkül sikertelen lesz.
+rebuild_every_ticks: Térképútvonalak újraépítése legfeljebb ennyi játékütemenként
+rebuild_every_ticks_tooltip: 200 játékütem normál sebességen néhány másodperc.
+balance_changes: Egyensúly-módosítások
+bugfixes: Hibajavítások
+qol: Kényelmi funkciók
 tags.behavior: Viselkedés
 tags.bugfixes: Hibajavítások
