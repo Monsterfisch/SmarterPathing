@@ -1,9 +1,17 @@
 name: smarter-pathing
 display-name: Smarter Pathing
 type: module
-version: 1.0.4
+version: 1.0.5
 author: Monsterfish
 dependencies:
   map-extensions: ^1.0.0
+  framework: ^3.0.7
+  frontend: ^1.0.2
 meta:
-  version: 1.0.3
+  version: 1.0.0
+game:
+- SHC==1.41
+- SHCE==1.41
+tags:
+- behavior
+- bugfixes

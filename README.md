@@ -1,5 +1,16 @@
 # Smarter Pathing
 
+## UCP package
+
+Helps workers recover from blocked routes and assassins resume their orders after a fight. You can also limit costly path rebuilds and configure how much time a climb must save before assassins leave the ground route.
+
+- Package version: **1.0.5**
+- Module directory: `module/`
+- Targets: Stronghold Crusader 1.41 and Stronghold Crusader Extreme 1.41
+- Requires UCP framework 3.0.7 and frontend 1.0.2 or a compatible later version
+- Requires Map Extensions 1.x for map and save load callbacks
+
+
 A UCP3 module for Stronghold Crusader and Stronghold Crusader Extreme that makes units find
 their way better. Assassins carry on to where they were sent after a fight instead of
 stopping where it ended.
