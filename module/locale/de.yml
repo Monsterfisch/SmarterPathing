@@ -3,7 +3,7 @@ assassins_resume_tooltip: |-
   Wenn ausgesandte Assassinen auf Feinde treffen und kämpfen, ziehen sie nach dem Kampf weiter zu ihrem ursprünglichen Ziel und erklimmen unterwegs weiterhin Mauern wie zuvor. Ohne diese Option blieben sie oft einfach dort stehen, wo der Kampf endete.
 assassins_shortcut: Assassinen klettern nur bei deutlicher Abkürzung
 assassins_shortcut_tooltip: |-
-  Assassinen suchen zuerst nach einem Weg am Boden. Kurze Wege werden immer gelaufen. Bei einem langen Fußweg prüfen sie zusätzlich den Weg über Mauern und klettern nur, wenn dieser deutlich kürzer ist. Kein unnötiges Auf- und Abklettern mehr, wenn ein Umweg zu Fuß genügt. Deaktiviere diese Option, wenn Torhauskorrekturen (Gatehouse Fixes) feindliche Tore als geschlossen behandelt oder Treppen für menschliche bzw. KI-Truppen erzwingt.
+  Assassinen suchen zuerst nach einem Weg am Boden. Kurze Wege werden immer gelaufen. Bei einem langen Fußweg prüfen sie zusätzlich den Weg über Mauern und klettern nur, wenn dieser deutlich kürzer ist. Kein unnötiges Auf- und Abklettern mehr, wenn ein Umweg zu Fuß genügt. Funktioniert zusammen mit den Tor-Routenregeln von Torhauskorrekturen (Gatehouse Fixes).
 shortcut_ground_steps: Kürzere Fußwege werden nie durch Klettern ersetzt (Felder)
 shortcut_ground_steps_tooltip: Ist der Weg am Boden kürzer als so viele Felder, laufen Assassinen einfach zu Fuß.
 shortcut_saving_percent: Klettern muss mindestens so viel Weg einsparen (Prozent)

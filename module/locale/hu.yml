@@ -3,7 +3,7 @@ assassins_resume_tooltip: |-
   Ha az útnak indított orgyilkosok ellenségbe ütköznek és megküzdenek vele, a harc végén továbbmennek az eredeti céljuk felé, útközben a falakat ugyanúgy megmászva. Enélkül gyakran ott ragadtak, ahol a harc véget ért.
 assassins_shortcut: Az orgyilkosok csak egyértelmű rövidítésnél másznak
 assassins_shortcut_tooltip: |-
-  Az orgyilkosok először a földön keresnek utat; a rövid utat mindig gyalog teszik meg. Hosszabb útnál megvizsgálják a falakon át vezető utat is, és csak akkor másznak, ha az egyértelműen rövidebb. Nincs több felesleges falmászás, ha kerülni is egyszerű. Kapcsold ki, ha a Gatehouse Fixes zártnak tekinti az ellenséges kapukat, vagy lépcsőt ír elő emberi illetve MI-csapatoknak.
+  Az orgyilkosok először a földön keresnek utat; a rövid utat mindig gyalog teszik meg. Hosszabb útnál megvizsgálják a falakon át vezető utat is, és csak akkor másznak, ha az egyértelműen rövidebb. Nincs több felesleges falmászás, ha kerülni is egyszerű. Együttműködik a Gatehouse Fixes kapukra vonatkozó útvonalszabályaival.
 shortcut_ground_steps: Ennél rövidebb gyalogutat sosem vált ki mászás (mező)
 shortcut_ground_steps_tooltip: Ha a földi út ennél kevesebb mező hosszú, az orgyilkosok egyszerűen végigsétálják.
 shortcut_saving_percent: A mászásnak legalább ennyit kell megtakarítania (százalék)

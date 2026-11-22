@@ -3,7 +3,7 @@ assassins_resume_tooltip: |-
   Bir yere gönderdiğin suikastçılar yolda düşmanla karşılaşıp savaştığında, çatışma bitince eskisi gibi surlara tırmanarak gönderdiğin yere yürümeye devam ederler. Bu ayar olmadan çoğu zaman çatışmanın bittiği yerde duruyorlardı.
 assassins_shortcut: Suikastçılar yalnızca belirgin kestirme varsa tırmanır
 assassins_shortcut_tooltip: |-
-  Suikastçılar önce yerden bir yol arar; kısa bir yürüyüş her zaman tercih edilir. Yürüyüş uzunsa surların üzerinden geçen yolu da kontrol eder ve yalnızca belirgin şekilde daha kısaysa tırmanırlar. Etraftan dolanmak yeterliyken gereksiz sur tırmanışı biter. Gatehouse Fixes düşman kapılarını kapalı sayıyor ya da oyuncu veya yapay zekâ birlikleri için merdiven gerektiriyorsa bunu kapatın.
+  Suikastçılar önce yerden bir yol arar; kısa bir yürüyüş her zaman tercih edilir. Yürüyüş uzunsa surların üzerinden geçen yolu da kontrol eder ve yalnızca belirgin şekilde daha kısaysa tırmanırlar. Etraftan dolanmak yeterliyken gereksiz sur tırmanışı biter. Gatehouse Fixes'teki kapı rota kurallarıyla birlikte çalışır.
 shortcut_ground_steps: Bundan kısa yürüyüşler asla tırmanmayla değiştirilmez (kare)
 shortcut_ground_steps_tooltip: Yerden yol bu sayıdan daha az kare ise suikastçılar yürüyerek gider.
 shortcut_saving_percent: Tırmanma yürüyüşten en az bu kadar tasarruf etmeli (yüzde)

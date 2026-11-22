@@ -3,7 +3,7 @@ assassins_resume_tooltip: |-
   Lorsque des assassins envoyés quelque part croisent des ennemis et les combattent, ils reprennent leur chemin vers leur destination une fois le combat terminé, en escaladant les murs comme avant. Sans cette option, ils s'arrêtaient souvent là où le combat s'achevait.
 assassins_shortcut: Les assassins n'escaladent que si c'est nettement plus court
 assassins_shortcut_tooltip: |-
-  Les assassins cherchent d'abord un chemin au sol et empruntent toujours un trajet court. Si le trajet est long, ils évaluent aussi le passage par les murs et n'escaladent que si c'est nettement plus court. Fini les escalades inutiles quand un détour suffit. Désactivez cette option si Gatehouse Fixes considère les portes ennemies comme fermées ou impose des escaliers aux troupes humaines ou IA.
+  Les assassins cherchent d'abord un chemin au sol et empruntent toujours un trajet court. Si le trajet est long, ils évaluent aussi le passage par les murs et n'escaladent que si c'est nettement plus court. Fini les escalades inutiles quand un détour suffit. Fonctionne avec les règles de trajet des portes de Gatehouse Fixes.
 shortcut_ground_steps: Les trajets plus courts ne sont jamais remplacés par l'escalade (cases)
 shortcut_ground_steps_tooltip: Si le chemin au sol compte moins de cases que ce seuil, les assassins y vont simplement à pied.
 shortcut_saving_percent: L'escalade doit raccourcir le trajet d'au moins (pour cent)

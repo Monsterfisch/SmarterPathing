@@ -3,7 +3,7 @@ assassins_resume_tooltip: |-
   Cuando los asesinos que enviaste a un lugar se cruzan con enemigos y luchan, siguen hacia su destino en cuanto acaba el combate, trepando muros como antes. Sin esto, a menudo se detenían donde terminaba la pelea.
 assassins_shortcut: Los asesinos solo trepan si es claramente más corto
 assassins_shortcut_tooltip: |-
-  Los asesinos buscan primero un camino por tierra y siempre recorren a pie un trayecto corto. Si el recorrido es largo, comprueban también el camino por los muros y solo trepan si ahorra claramente camino. Se acabó subir y bajar muros cuando basta rodear. Desactívalo si Gatehouse Fixes trata las puertas enemigas como cerradas o exige escaleras a las tropas humanas o de la IA.
+  Los asesinos buscan primero un camino por tierra y siempre recorren a pie un trayecto corto. Si el recorrido es largo, comprueban también el camino por los muros y solo trepan si ahorra claramente camino. Se acabó subir y bajar muros cuando basta rodear. Funciona junto con las reglas de ruta de puertas de Gatehouse Fixes.
 shortcut_ground_steps: Los recorridos más cortos nunca se sustituyen por trepar (casillas)
 shortcut_ground_steps_tooltip: Si el camino por tierra tiene menos casillas que este valor, los asesinos simplemente caminan.
 shortcut_saving_percent: Trepar debe ahorrar al menos este porcentaje del recorrido

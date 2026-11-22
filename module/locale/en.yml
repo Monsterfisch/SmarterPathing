@@ -5,8 +5,8 @@ assassins_resume_tooltip: When assassins you sent somewhere run into enemies and
 assassins_shortcut: Assassins only climb when it is clearly shorter
 assassins_shortcut_tooltip: Assassins look for a way on the ground first. A short walk is always taken.
   When the walk is long, they look for a way over the walls too, and climb only if that way is clearly
-  shorter. No more climbing up and down walls when walking around would do. Disable this if Gatehouse
-  Fixes treats enemy gates as closed or requires stairs for human or AI troops.
+  shorter. No more climbing up and down walls when walking around would do. Works together with
+  the gate route rules of Gatehouse Fixes.
 shortcut_ground_steps: Walks shorter than this are never replaced by climbing (tiles)
 shortcut_ground_steps_tooltip: If the way on the ground is shorter than this many tiles, assassins just
   walk it.

@@ -3,7 +3,7 @@ assassins_resume_tooltip: |-
   当你派往某处的刺客中途遭遇敌军并交战后，战斗结束时他们会继续前往原定目的地，并照常翻越沿途城墙。没有此选项时，他们常常在战斗结束的地方停下。
 assassins_shortcut: 刺客仅在明显更近时才攀墙
 assassins_shortcut_tooltip: |-
-  刺客会先在地面寻路，短距离始终步行；只有路程较长时才会同时评估翻墙路线，且仅当翻墙明显更短时才攀爬，不再动辄上下城墙。如果 Gatehouse Fixes 将敌方城门视为关闭，或要求人类/AI 部队必须使用阶梯，请关闭此项。
+  刺客会先在地面寻路，短距离始终步行；只有路程较长时才会同时评估翻墙路线，且仅当翻墙明显更短时才攀爬，不再动辄上下城墙。可与 Gatehouse Fixes 的城门路线规则协同工作。
 shortcut_ground_steps: 短于此距离的地面路线绝不改为攀墙（格）
 shortcut_ground_steps_tooltip: 如果地面路线短于这么多格，刺客会直接步行。
 shortcut_saving_percent: 攀墙至少需要节省的步行比例（百分比）
