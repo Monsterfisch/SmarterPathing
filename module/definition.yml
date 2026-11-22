@@ -5,6 +5,7 @@ version: 1.0.5
 author: Monsterfish
 dependencies:
   map-extensions: ^1.0.0
+  route-search: ^1.0.0
   framework: ^3.0.7
   frontend: ^1.0.2
 meta:

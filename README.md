@@ -9,6 +9,7 @@ Helps workers recover from blocked routes and assassins resume their orders afte
 - Targets: Stronghold Crusader 1.41 and Stronghold Crusader Extreme 1.41
 - Requires UCP framework 3.0.7 and frontend 1.0.2 or a compatible later version
 - Requires Map Extensions 1.x for map and save load callbacks
+- Requires Route Search 1.x (`route-search`, in the UCP3 Fixes repository) for the assassin shortcut
 
 
 A UCP3 module for Stronghold Crusader and Stronghold Crusader Extreme that makes units find
@@ -46,11 +47,15 @@ What the module does, in plain English, is in `module/locale/description-en.md`.
   for the same destination again gets the flag back.
 * That memory (the ids of the assassins that may climb) is stored in saved games through the
   `map-extensions` module's own section, and wiped for a game started from a map.
-* Climb shortcut: setDestinationForUnit's call of `doPathfinding` is redirected (chaining to
-  whatever it called before - smarter-gatehouses redirects the same call). With the climb
-  flag set, the search first runs without it. A ground route under the step limit is kept;
-  a longer one is copied aside (`PathFindingState+0x1BB38`, 0x190 bytes) while the climbing
-  search runs, and put back unless the climbing route is shorter by the set percentage.
+* Climb shortcut: a policy (order 100) of the `route-search` module, which owns
+  setDestinationForUnit's call of `doPathfinding`. Each of its searches goes through the
+  policy's `next`, so Gatehouse Fixes' gate rules (order 200) run inside both, for the same
+  unit. With the climb flag set, the search first runs without it. A ground route under the
+  step limit is kept; a longer one is copied aside (`PathFindingState+0x1BB38`, 0x190 bytes)
+  while the climbing search runs, and put back unless the climbing route is shorter by the
+  set percentage. When a route is returned, the order's final destination (unit
+  `+0xEC/+0xEE`) and unit `+0x2D2` are put back as they were, in case a policy inside
+  stopped the unit for a candidate that found no route.
 * Workers on a break: `SetRestingForUnit` (state 0x79) ignores whether the route to the good
   building it picked was found, and ends the break only on arrival. A worker whose route is
   blocked and whose new search failed waits in `processUnitMove` (unit `+0x3F4`) and retries

@@ -44,30 +44,40 @@ write_destination:
   jmp RESUME
 ]]
 
--- Stands in for PathFindingState::doPathfinding(owner, canClimbTowers) at its call in
--- setDestinationForUnit (thiscall, ecx = PathFindingState, ret 8). SEARCH is whatever that
--- call went to before (the game's search, or another module's wrapper of it).
+-- A route-search policy (order 100) for setDestinationForUnit's route search: called like
+-- PathFindingState::doPathfinding(owner, canClimbTowers) (thiscall, ecx = PathFindingState,
+-- ret 8). [NEXT] is the rest of the search (other modules' policies, then the game's search);
+-- [UNIT] is the unit whose route it is.
 --
 -- A search with CLIMB_FLAG set (assassins sent on their own) first looks for a route on the
 -- ground. A ground route shorter than GROUND_ENOUGH steps is taken as it is. A longer one is
 -- kept aside while the climbing search runs, and the climbing route is taken only when it
 -- needs at most KEEP_PERCENT percent of the ground route's steps (or there is no ground
 -- route at all).
+-- A policy inside this one may stop the unit when a candidate finds no route (Gatehouse
+-- Fixes does). setDestinationForUnit rewrites the route itself when a route is returned, but
+-- not the order's final destination (UNIT_DEST) or UNIT_2D2, so those two are put back as
+-- they were whenever a route is returned.
 templates.climbChoice = [[
   cmp dword [CLIMB_FLAG], 0
   jne choose
-  jmp SEARCH
+  jmp dword [NEXT]
 choose:
   push ebx
   push esi
   push edi
   push ebp
   mov esi, ecx
+  mov eax, [UNIT]
+  mov edx, [eax + UNIT_DEST]
+  mov [SAVED_ORDER], edx
+  mov dx, [eax + UNIT_2D2]
+  mov [SAVED_ORDER + 4], dx
   mov dword [CLIMB_FLAG], 0
   push dword [esp + 0x18]
   push dword [esp + 0x18]
   mov ecx, esi
-  call SEARCH
+  call dword [NEXT]
   mov dword [CLIMB_FLAG], 1
   mov ebx, eax
   test ebx, ebx
@@ -85,7 +95,7 @@ climb:
   push dword [esp + 0x18]
   push dword [esp + 0x18]
   mov ecx, esi
-  call SEARCH
+  call dword [NEXT]
   test eax, eax
   jle ground_again
   test ebx, ebx
@@ -110,6 +120,14 @@ ground_again:
 take_ground:
   mov eax, ebx
 finish:
+  test eax, eax
+  jle done
+  mov ecx, [UNIT]
+  mov edx, [SAVED_ORDER]
+  mov [ecx + UNIT_DEST], edx
+  mov dx, [SAVED_ORDER + 4]
+  mov [ecx + UNIT_2D2], dx
+done:
   pop ebp
   pop edi
   pop esi

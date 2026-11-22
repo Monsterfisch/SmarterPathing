@@ -18,9 +18,11 @@
 
   2. Assassins only climb when it is clearly shorter (assassinsShortcut). The climbing search
      (pathFindingWithBuildingsIncluded) does not care how often a route goes up and down
-     walls. setDestinationForUnit's route search is wrapped: a search that may climb first
-     runs without the climb flag, and a ground route is kept when it is short, or when the
-     climbing route is not shorter by at least shortcutSavingPercent.
+     walls. setDestinationForUnit's route search gets a policy through the route-search
+     module: a search that may climb first runs without the climb flag, and a ground route
+     is kept when it is short, or when the climbing route is not shorter by at least
+     shortcutSavingPercent. Gatehouse Fixes' gate rules (another policy) run inside each
+     of those searches, for the same unit.
 
   3. Aggressive troops leave quarry stockpiles alone (ignoreQuarryPiles). The aggressive
      stance's building search skips the stockpile through a per-type table but not the
@@ -81,12 +83,11 @@ local FINAL_DESTINATION_SIZE = 14
 -- (mov [flag], ebx) and tested further on (cmp [flag], ebx).
 local CLIMB_FLAG_CLEAR = { 0x9D, { 0x89, 0x1D } }
 local CLIMB_FLAG_TEST = { 0x1F4, { 0x39, 0x1D } }
--- setDestinationForUnit's call of PathFindingState::doPathfinding(owner, canClimbTowers).
--- Gatehouse Fixes also patches this call. Compare it with the original callee.
-local AOB_ROUTE_CALL = "0F BF 8E AA 06 00 00 8B 44 24 14 50 51 B9 ? ? ? ? E8 ? ? ? ?"
-local ROUTE_CALL = 18
-local AOB_DO_PATHFINDING = "56 8B F1 8B 46 0C 8B 4E 14 8D 04 40 8B 04 85 ? ? ? ? 03 46 08 8D "
-  .. "0C 49 8B 0C 8D ? ? ? ? 03 4E 10 0F B7 14 45 ? ? ? ?"
+-- setDestinationForUnit's route search (its call of PathFindingState::doPathfinding) belongs
+-- to the route-search module; the shortcut is one of its policies. Order 100: it compares
+-- candidate searches, so it runs outside policies that change what one search sees
+-- (Gatehouse Fixes' gate rules, 200).
+local ROUTE_POLICY = { id = "smarter-pathing.assassinsShortcut", order = 100 }
 -- PathFindingState::bindPathPlanToAlgorithmStateAndReset: the route is written to the
 -- buffer at +0x1BB38 (0x190 bytes, four bits a step), its length is +0x1BB3C.
 local AOB_BIND_PLAN = "8B 44 24 04 89 81 38 BB 01 00 C7 81 3C BB 01 00 00 00 00 00 C2 04 00"
@@ -271,22 +272,14 @@ local function climbFlag()
 end
 
 local function enable(self, config)
-  local routeCall, search
+  -- Registered first: if route-search cannot take the route search, nothing is changed.
+  local routes, route
   if setting(config, "assassinsShortcut") then
-    routeCall = scan(AOB_ROUTE_CALL, "setDestinationForUnit's route search") + ROUTE_CALL
-    search = scan(AOB_DO_PATHFINDING, "the original route search")
-    local nextCall = core.scanForAOB(AOB_ROUTE_CALL, routeCall - ROUTE_CALL + 1)
-    local nextSearch = core.scanForAOB(AOB_DO_PATHFINDING, search + 1)
-    if (nextCall and nextCall ~= 0) or (nextSearch and nextSearch ~= 0) then
-      error(MODULE_NAME .. ": the route call or original search signature is ambiguous")
+    routes = modules["route-search"]
+    if not routes or (routes.version or 0) < 1 then
+      error(MODULE_NAME .. ": the assassin shortcut needs the route-search module (version 1)")
     end
-    expectBytes(routeCall, { 0xE8 }, "setDestinationForUnit's route search")
-    if (routeCall + 5 + core.readInteger(routeCall + 1)) & 0xFFFFFFFF ~= search then
-      error("smarter-pathing.assassinsShortcut cannot be combined with "
-      .. "smarter-gatehouses.pathing.enemy_gates_closed, smarter-gatehouses.walls.stairs_needed "
-      .. "or smarter-gatehouses.walls.stairs_needed_ai. Disable the assassin shortcut or all three "
-      .. "gate route options. The native route call may also be occupied by another module.")
-    end
+    route = routes:addPolicy(ROUTE_POLICY)
   end
 
   local climbers, failures, limiter
@@ -338,12 +331,16 @@ local function enable(self, config)
     core.writeCode(entry, { 0 })
   end
 
-  if routeCall then
+  if route then
     local _, flag = climbFlag()
     scan(AOB_BIND_PLAN, "where a route is written")
     local choice = assemble(templates.climbChoice, {
       CLIMB_FLAG = flag,
-      SEARCH = search,
+      NEXT = route.next,
+      UNIT = route.unit,
+      UNIT_DEST = UNITS_FROM_STATE + U_DEST_X,
+      UNIT_2D2 = UNITS_FROM_STATE + WORKER_FIELDS.U_MOVE_2D2,
+      SAVED_ORDER = core.allocate(8, true),
       GROUND_ENOUGH = number(config, "shortcutGroundSteps", 1, 800),
       KEEP_PERCENT = 100 - number(config, "shortcutSavingPercent", 0, 90),
       PLAN = PF_PLAN,
@@ -351,7 +348,7 @@ local function enable(self, config)
       PLAN_BYTES = PLAN_BYTES,
       SAVED_PLAN = core.allocate(PLAN_BYTES, true),
     })
-    core.writeCode(routeCall, { 0xE8, core.itob(core.getRelativeAddress(routeCall, choice, -5)) })
+    routes:enablePolicy(ROUTE_POLICY.id, choice)
   end
 
   if setting(config, "rebuildLimit") then
