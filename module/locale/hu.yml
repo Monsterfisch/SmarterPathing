@@ -1,0 +1,21 @@
+assassins_resume: Az orgyilkosok harc után folytatják a parancsaikat
+assassins_resume_tooltip: Az orgyilkosok a harc végeztével visszatérnek korábbi parancsaikhoz.
+assassins_shortcut: Az orgyilkosok csak rövidebb útért másznak
+assassins_shortcut_tooltip: Adj ki normál mozgásparancsot, és az orgyilkosok csak akkor másznak, ha elég utat spórolnak.
+workers_unstuck: Pihenőn elakadt munkások kiszabadítása
+workers_unstuck_tooltip: A pihenő közben elakadt munkások visszatérhetnek a munkához.
+workers_jobs_unstuck: Munkába menet elakadt munkások leváltása
+workers_jobs_unstuck_tooltip: Az épület új munkást kap, ha a kijelölt munkás nem tudja elérni.
+ignore_quarry_piles: A támadó csapatok figyelmen kívül hagyják a kőfejtő-halmokat
+ignore_quarry_piles_tooltip: A támadó harci módban lévő egységek békén hagyják a kőfejtő-rakásokat.
+rebuild_limit: Teljes útvonal-újraépítés korlátozása sikertelen út után
+rebuild_limit_tooltip: A sikertelen útvonalak csak rövid késleltetés után indíthatnak teljes újraépítést.
+balance_changes: Egyensúlymódosítások
+bugfixes: Hibajavítások
+qol: Kényelmi funkciók
+tags.behavior: Viselkedés
+tags.bugfixes: Hibajavítások
+cat_unit_controls: Egységirányítás
+cat_unit_orders: Egységparancsok és célpontok
+cat_units_armour: Egységmozgás és páncél
+cat_worker_routes: Munkásútvonalak és szállítások

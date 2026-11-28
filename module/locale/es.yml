@@ -1,0 +1,21 @@
+assassins_resume: Los asesinos retoman sus órdenes tras combatir
+assassins_resume_tooltip: Los asesinos vuelven a sus órdenes anteriores en cuanto termina la pelea.
+assassins_shortcut: Los asesinos solo trepan si acorta la ruta
+assassins_shortcut_tooltip: Da una orden normal de movimiento y los asesinos solo treparán cuando ahorre suficiente camino.
+workers_unstuck: Liberar trabajadores atascados en descansos
+workers_unstuck_tooltip: Los trabajadores atascados durante un descanso pueden volver al trabajo.
+workers_jobs_unstuck: Reemplazar trabajadores atascados camino al trabajo
+workers_jobs_unstuck_tooltip: El edificio recibe un nuevo trabajador cuando el asignado no puede llegar hasta él.
+ignore_quarry_piles: Las tropas agresivas ignoran los montones de cantera
+ignore_quarry_piles_tooltip: Las unidades en postura agresiva dejan en paz los almacenes de cantera.
+rebuild_limit: Limitar reconstrucciones completas de rutas tras un fallo
+rebuild_limit_tooltip: Las rutas fallidas solo pueden activar una reconstrucción completa tras una breve demora.
+balance_changes: Cambios de equilibrio
+bugfixes: Correcciones de errores
+qol: Comodidad de juego
+tags.behavior: Comportamiento
+tags.bugfixes: Correcciones
+cat_unit_controls: Control de unidades
+cat_unit_orders: Órdenes y objetivos de unidades
+cat_units_armour: Movimiento y armadura de unidades
+cat_worker_routes: Rutas y entregas de trabajadores

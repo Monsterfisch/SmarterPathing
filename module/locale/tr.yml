@@ -1,0 +1,21 @@
+assassins_resume: Suikastçılar çatışma sonrası emirlerine devam eder
+assassins_resume_tooltip: Çatışma bittiğinde suikastçılar önceki emirlerine döner.
+assassins_shortcut: Suikastçılar yalnızca daha kısa bir rota için tırmanır
+assassins_shortcut_tooltip: Normal bir hareket emri verin; suikastçılar yalnızca yeterince yol kısaltıyorsa tırmanır.
+workers_unstuck: Molada takılı kalan işçileri kurtar
+workers_unstuck_tooltip: Molada takılı kalan işçiler işlerine dönebilir.
+workers_jobs_unstuck: İşe giderken takılı kalan işçileri değiştir
+workers_jobs_unstuck_tooltip: Atanan işçi binaya ulaşamadığında bina yeni bir işçi alır.
+ignore_quarry_piles: Saldırgan birlikler taş ocağı yığınlarını yok sayar
+ignore_quarry_piles_tooltip: Saldırgan duruştaki birimler taş ocağı yığınlarına saldırmaz.
+rebuild_limit: Başarısız rotadan sonra tam yol yenilemesini sınırla
+rebuild_limit_tooltip: Başarısız rotalar ancak kısa bir gecikmenin ardından tam yol yenilemesini tetikleyebilir.
+balance_changes: Denge değişiklikleri
+bugfixes: Hata düzeltmeleri
+qol: Kullanım kolaylığı
+tags.behavior: Davranış
+tags.bugfixes: Hata düzeltmeleri
+cat_unit_controls: Birlik kontrolleri
+cat_unit_orders: Birlik emirleri ve hedefleme
+cat_units_armour: Birlik hareketi ve zırh
+cat_worker_routes: İşçi yolları ve teslimatlar

@@ -1,0 +1,25 @@
+meta:
+  version: 1.0.0
+config-sparse:
+  modules:
+    smarter-pathing:
+      config:
+        assassinsResume:
+          contents:
+            suggested-value: true
+        workersUnstuck:
+          contents:
+            suggested-value: true
+        workersJobsUnstuck:
+          contents:
+            suggested-value: true
+        rebuildLimit:
+          contents:
+            suggested-value: true
+        ignoreQuarryPiles:
+          contents:
+            suggested-value: true
+        assassinsShortcut:
+          contents:
+            suggested-value: true
+  plugins: {}

@@ -1,88 +1,99 @@
 options:
-- display: GroupBox
-  category: [Smarter Pathing]
-  header: '{{group}}'
-  text: '{{group_descr}}'
-  hasHeader: true
-  children:
-  - url: smarter-pathing.assassinsResume
-    name: smarter-pathing-assassins-resume
-    text: '{{assassins_resume}}'
-    tooltip: '{{assassins_resume_tooltip}}'
-    display: Switch
-    contents:
-      type: boolean
-      value: true
-  - url: smarter-pathing.assassinsShortcut
-    name: smarter-pathing-assassins-shortcut
-    text: '{{assassins_shortcut}}'
-    tooltip: '{{assassins_shortcut_tooltip}}'
-    display: Switch
-    contents:
-      type: boolean
-      value: true
-  - url: smarter-pathing.shortcutGroundSteps
-    name: smarter-pathing-shortcut-ground-steps
-    text: '{{shortcut_ground_steps}}'
-    tooltip: '{{shortcut_ground_steps_tooltip}}'
-    display: Number
-    contents:
-      type: integer
-      value: 30
-      min: 1
-      max: 800
-      step: 1
-  - url: smarter-pathing.shortcutSavingPercent
-    name: smarter-pathing-shortcut-saving-percent
-    text: '{{shortcut_saving_percent}}'
-    tooltip: '{{shortcut_saving_percent_tooltip}}'
-    display: Number
-    contents:
-      type: integer
-      value: 25
-      min: 0
-      max: 90
-      step: 5
-  - url: smarter-pathing.workersUnstuck
-    name: smarter-pathing-workers-unstuck
-    text: '{{workers_unstuck}}'
-    tooltip: '{{workers_unstuck_tooltip}}'
-    display: Switch
-    contents:
-      type: boolean
-      value: true
-  - url: smarter-pathing.workersJobsUnstuck
-    name: smarter-pathing-workers-jobs-unstuck
-    text: '{{workers_jobs_unstuck}}'
-    tooltip: '{{workers_jobs_unstuck_tooltip}}'
-    display: Switch
-    contents:
-      type: boolean
-      value: true
-  - url: smarter-pathing.ignoreQuarryPiles
-    name: smarter-pathing-ignore-quarry-piles
-    text: '{{ignore_quarry_piles}}'
-    tooltip: '{{ignore_quarry_piles_tooltip}}'
-    display: Switch
-    contents:
-      type: boolean
-      value: true
-  - url: smarter-pathing.rebuildLimit
-    name: smarter-pathing-rebuild-limit
-    text: '{{rebuild_limit}}'
-    tooltip: '{{rebuild_limit_tooltip}}'
-    display: Switch
-    contents:
-      type: boolean
-      value: true
-  - url: smarter-pathing.rebuildEveryTicks
-    name: smarter-pathing-rebuild-every-ticks
-    text: '{{rebuild_every_ticks}}'
-    tooltip: '{{rebuild_every_ticks_tooltip}}'
-    display: Number
-    contents:
-      type: integer
-      value: 200
-      min: 10
-      max: 5000
-      step: 10
+- url: smarter-pathing.assassinsResume
+  name: smarter-pathing-assassins-resume
+  display: UCP2Switch
+  contents:
+    type: boolean
+    value: false
+  header: '{{assassins_resume}}'
+  text: '{{assassins_resume_tooltip}}'
+  category:
+  - '{{bugfixes}}'
+  - '{{cat_unit_orders}}'
+- url: smarter-pathing.workersUnstuck
+  name: smarter-pathing-workers-unstuck
+  display: UCP2Switch
+  contents:
+    type: boolean
+    value: false
+  header: '{{workers_unstuck}}'
+  text: '{{workers_unstuck_tooltip}}'
+  category:
+  - '{{bugfixes}}'
+  - '{{cat_worker_routes}}'
+- url: smarter-pathing.workersJobsUnstuck
+  name: smarter-pathing-workers-jobs-unstuck
+  display: UCP2Switch
+  contents:
+    type: boolean
+    value: false
+  header: '{{workers_jobs_unstuck}}'
+  text: '{{workers_jobs_unstuck_tooltip}}'
+  category:
+  - '{{bugfixes}}'
+  - '{{cat_worker_routes}}'
+- url: smarter-pathing.rebuildLimit
+  name: smarter-pathing-rebuild-limit
+  display: UCP2Switch
+  contents:
+    type: boolean
+    value: false
+  header: '{{rebuild_limit}}'
+  text: '{{rebuild_limit_tooltip}}'
+  category:
+  - '{{bugfixes}}'
+  - '{{cat_worker_routes}}'
+- url: smarter-pathing.ignoreQuarryPiles
+  name: smarter-pathing-ignore-quarry-piles
+  display: UCP2Switch
+  contents:
+    type: boolean
+    value: false
+  header: '{{ignore_quarry_piles}}'
+  text: '{{ignore_quarry_piles_tooltip}}'
+  category:
+  - '{{qol}}'
+  - '{{cat_unit_controls}}'
+- url: smarter-pathing.assassinsShortcut
+  name: smarter-pathing-assassins-shortcut
+  display: UCP2Switch
+  contents:
+    type: boolean
+    value: false
+  header: '{{assassins_shortcut}}'
+  text: '{{assassins_shortcut_tooltip}}'
+  category:
+  - '{{balance_changes}}'
+  - '{{cat_units_armour}}'
+- url: smarter-pathing.rebuildEveryTicks
+  name: smarter-pathing-rebuild-every-ticks
+  display: Number
+  contents:
+    type: integer
+    value: 200
+    min: 10
+    max: 5000
+    step: 10
+  hidden: true
+- url: smarter-pathing.shortcutGroundSteps
+  name: smarter-pathing-shortcut-ground-steps
+  display: Number
+  contents:
+    type: integer
+    value: 30
+    min: 1
+    max: 800
+    step: 1
+  hidden: true
+- url: smarter-pathing.shortcutSavingPercent
+  name: smarter-pathing-shortcut-saving-percent
+  display: Number
+  contents:
+    type: integer
+    value: 25
+    min: 0
+    max: 90
+    step: 5
+  hidden: true
+meta:
+  version: 1.0.0

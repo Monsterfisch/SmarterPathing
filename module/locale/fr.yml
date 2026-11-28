@@ -1,0 +1,21 @@
+assassins_resume: Les assassins reprennent leurs ordres après un combat
+assassins_resume_tooltip: Les assassins reviennent à leurs ordres précédents une fois le combat terminé.
+assassins_shortcut: Les assassins n’escaladent que pour un trajet plus court
+assassins_shortcut_tooltip: "Donnez un ordre de déplacement normal : les assassins n’escaladent que si cela raccourcit assez le trajet."
+workers_unstuck: Libérer les ouvriers bloqués en pause
+workers_unstuck_tooltip: Les ouvriers bloqués pendant une pause peuvent reprendre le travail.
+workers_jobs_unstuck: Remplacer les ouvriers bloqués en route vers leur travail
+workers_jobs_unstuck_tooltip: Le bâtiment reçoit un nouvel ouvrier quand celui qui est affecté ne peut pas l’atteindre.
+ignore_quarry_piles: Les troupes agressives ignorent les tas des carrières
+ignore_quarry_piles_tooltip: Les unités en posture agressive laissent tranquilles les réserves de carrière.
+rebuild_limit: Limiter les recalculs complets après un trajet échoué
+rebuild_limit_tooltip: Les trajets échoués ne déclenchent un recalcul complet qu’après un court délai.
+balance_changes: Modifications de l'équilibrage
+bugfixes: Corrections de bugs
+qol: Qualité de vie
+tags.behavior: Comportement
+tags.bugfixes: Corrections
+cat_unit_controls: Contrôle des unités
+cat_unit_orders: Ordres et ciblage des unités
+cat_units_armour: Déplacement et armure des unités
+cat_worker_routes: Trajets et livraisons des ouvriers
